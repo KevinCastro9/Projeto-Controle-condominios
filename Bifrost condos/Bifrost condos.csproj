@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C1249DB-2E8F-4EA8-9082-11334A46FCAE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bifrost_condos</RootNamespace>
+    <AssemblyName>Bifrost condos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cadastrarAvisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrarAvisos.Designer.cs">
+      <DependentUpon>cadastrarAvisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastrarMaisCargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrarMaisCargos.Designer.cs">
+      <DependentUpon>cadastrarMaisCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadastrarReunião.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrarReunião.Designer.cs">
+      <DependentUpon>cadastrarReunião.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroDepartamento.Designer.cs">
+      <DependentUpon>CadastroDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroEmpresas.Designer.cs">
+      <DependentUpon>CadastroEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroFuncionarios.Designer.cs">
+      <DependentUpon>CadastroFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroMoradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroMoradores.Designer.cs">
+      <DependentUpon>CadastroMoradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroUsuarios.Designer.cs">
+      <DependentUpon>CadastroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroVisitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroVisitantes.Designer.cs">
+      <DependentUpon>CadastroVisitantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexão.cs" />
+    <Compile Include="ConfiguracaoBlocos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfiguracaoBlocos.Designer.cs">
+      <DependentUpon>ConfiguracaoBlocos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes.Designer.cs">
+      <DependentUpon>Configuracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarDepartamento.Designer.cs">
+      <DependentUpon>ConsultarDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarEmpresa.Designer.cs">
+      <DependentUpon>ConsultarEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarFuncionario.Designer.cs">
+      <DependentUpon>ConsultarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarMoradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarMoradores.Designer.cs">
+      <DependentUpon>ConsultarMoradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarUsuarios.Designer.cs">
+      <DependentUpon>ConsultarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarVisitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarVisitantes.Designer.cs">
+      <DependentUpon>ConsultarVisitantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas.Designer.cs">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPF.cs" />
+    <Compile Include="deleteCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteCargo.Designer.cs">
+      <DependentUpon>deleteCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteDepartamentos.Designer.cs">
+      <DependentUpon>deleteDepartamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteFuncionarios.Designer.cs">
+      <DependentUpon>deleteFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteMoradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteMoradores.Designer.cs">
+      <DependentUpon>deleteMoradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteReuniao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteReuniao.Designer.cs">
+      <DependentUpon>deleteReuniao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteServicos.Designer.cs">
+      <DependentUpon>deleteServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteUsuarios.Designer.cs">
+      <DependentUpon>deleteUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteVisitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteVisitantes.Designer.cs">
+      <DependentUpon>deleteVisitantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresasCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpresasCadastros.Designer.cs">
+      <DependentUpon>EmpresasCadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Encomendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encomendas.Designer.cs">
+      <DependentUpon>Encomendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntregasRapidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntregasRapidas.Designer.cs">
+      <DependentUpon>EntregasRapidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs" />
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySqlConnection.cs" />
+    <Compile Include="TelaCarregamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCarregamento.Designer.cs">
+      <DependentUpon>TelaCarregamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPrincipal.Designer.cs">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tela_ConfiguracaoInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_ConfiguracaoInicial.Designer.cs">
+      <DependentUpon>Tela_ConfiguracaoInicial.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="cadastrarMaisCargos.resx">
+      <DependentUpon>cadastrarMaisCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastrarReunião.resx">
+      <DependentUpon>cadastrarReunião.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroDepartamento.resx">
+      <DependentUpon>CadastroDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroEmpresas.resx">
+      <DependentUpon>CadastroEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroFuncionarios.resx">
+      <DependentUpon>CadastroFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroMoradores.resx">
+      <DependentUpon>CadastroMoradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroUsuarios.resx">
+      <DependentUpon>CadastroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroVisitantes.resx">
+      <DependentUpon>CadastroVisitantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfiguracaoBlocos.resx">
+      <DependentUpon>ConfiguracaoBlocos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes.resx">
+      <DependentUpon>Configuracoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarDepartamento.resx">
+      <DependentUpon>ConsultarDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarEmpresa.resx">
+      <DependentUpon>ConsultarEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarFuncionario.resx">
+      <DependentUpon>ConsultarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarMoradores.resx">
+      <DependentUpon>ConsultarMoradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarUsuarios.resx">
+      <DependentUpon>ConsultarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarVisitantes.resx">
+      <DependentUpon>ConsultarVisitantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas.resx">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteCargo.resx">
+      <DependentUpon>deleteCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteDepartamentos.resx">
+      <DependentUpon>deleteDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteFuncionarios.resx">
+      <DependentUpon>deleteFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteMoradores.resx">
+      <DependentUpon>deleteMoradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteReuniao.resx">
+      <DependentUpon>deleteReuniao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteServicos.resx">
+      <DependentUpon>deleteServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteUsuarios.resx">
+      <DependentUpon>deleteUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteVisitantes.resx">
+      <DependentUpon>deleteVisitantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpresasCadastros.resx">
+      <DependentUpon>EmpresasCadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encomendas.resx">
+      <DependentUpon>Encomendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntregasRapidas.resx">
+      <DependentUpon>EntregasRapidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCarregamento.resx">
+      <DependentUpon>TelaCarregamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TelaPrincipal.resx">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tela_ConfiguracaoInicial.resx">
+      <DependentUpon>Tela_ConfiguracaoInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mao-segurando-o-telefone-inteligente-movel-tela-azul-em-branco-no-azul-degrade_123766-22 - Copia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo-azul-escuro-degrade-2-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tela login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tela login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tela1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem amigos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem %40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem amigos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem amigos1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem amigos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem formulario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem Pastas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem configuraçao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagens ferramentas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basic-web-icons-blue-circle-buttons-series-9785025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem X dois.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem X dois1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem X dois2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem X dois3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem X dois4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round-web-icons-buttons-7707266.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linha botao.png" />
+  </ItemGroup>
+  <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linha teste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem lado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem voltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem chave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\departamento.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moradores.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionarios.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visitantes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
+</Project>
