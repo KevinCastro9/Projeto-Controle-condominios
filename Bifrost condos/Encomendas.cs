@@ -145,16 +145,18 @@ namespace Bifrost_condos
                 SqlDataReader dr;
             if (comboBox3.Text == "APARTAMENTO")
             {
+                login login = new login();
+                login.selectcodbloco(cmbBlocos.Text);
                 string apartamento = cmbApt.Text;
-                string bloco = cmbBlocos.Text;
-                cmd.CommandText = "select * from encomendas where apartamento = @apartamento and bloco = @bloco";
+                string bloco = login.tem19.ToString();
+                cmd.CommandText = "select * from ENCOMENDAS where APARTAMENTO = @apartamento and COD_BLOCO = @bloco";
                 cmd.Parameters.AddWithValue("@apartamento", apartamento);
                 cmd.Parameters.AddWithValue("@bloco", bloco);
             }
             if (comboBox3.Text == "DATA")
             {
                 string data = cmbDia.Text + "/" + CmbMes.Text + "/" + cmbAno.Text;
-                cmd.CommandText = "select * from encomendas where dataPrevisao = @data";
+                cmd.CommandText = "select * from ENCOMENDAS where DATA_PREVISAO = @data";
                 cmd.Parameters.AddWithValue("@data", data);
             }
             try
@@ -178,6 +180,12 @@ namespace Bifrost_condos
                         if (dr.GetFieldType(a).ToString() == "System.Int32")
                         {
                             linhaDados[a] = dr.GetInt32(a).ToString();
+                            if (a == 7)
+                            {
+                                login login = new login();
+                                login.selectBlocos(dr.GetInt32(a));
+                                linhaDados[a] = login.tem16;
+                            }
                         }
                         if (dr.GetFieldType(a).ToString() == "System.String")
                         {
@@ -277,6 +285,12 @@ namespace Bifrost_condos
                             if (dr.GetFieldType(a).ToString() == "System.Int32")
                             {
                                 linhaDados[a] = dr.GetInt32(a).ToString();
+                                if (a == 7)
+                                {
+                                    login login = new login();
+                                    login.selectBlocos(dr.GetInt32(a));
+                                    linhaDados[a] = login.tem16;
+                                }
                             }
                             if (dr.GetFieldType(a).ToString() == "System.String")
                             {

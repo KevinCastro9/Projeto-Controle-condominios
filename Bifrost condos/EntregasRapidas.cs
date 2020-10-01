@@ -79,10 +79,11 @@ namespace Bifrost_condos
             Conexão conexão = new Conexão();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr;
-
+            login login = new login();
+            login.selectcodbloco(cmbBlocos.Text);
                 string apartamento = cmbApt.Text;
-                string bloco = cmbBlocos.Text;
-                cmd.CommandText = "select * from pedidosRapidos where apartamento = @apartamento and bloco = @bloco";
+                string bloco = login.tem19.ToString();
+                cmd.CommandText = "select * from PEDIDOS_RAPIDOS where APARTAMENTO = @apartamento and COD_BLOCO = @bloco";
                 cmd.Parameters.AddWithValue("@apartamento", apartamento);
                 cmd.Parameters.AddWithValue("@bloco", bloco);
 
@@ -107,6 +108,12 @@ namespace Bifrost_condos
                         if (dr.GetFieldType(a).ToString() == "System.Int32")
                         {
                             linhaDados[a] = dr.GetInt32(a).ToString();
+                            if (a == 5)
+                            {
+                                
+                                login.selectBlocos(dr.GetInt32(a));
+                                linhaDados[a] = login.tem16;
+                            }
                         }
                         if (dr.GetFieldType(a).ToString() == "System.String")
                         {
@@ -126,7 +133,9 @@ namespace Bifrost_condos
                     MessageBox.Show("A Consulta não foi localizada, tente novamente!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     dataGridView2.Rows.Clear();
                     dataGridView2.Columns.Clear();
-                   
+                    cmbApt.Text = "";
+                    cmbBlocos.Text = "";
+
 
                 }
 
@@ -161,7 +170,7 @@ namespace Bifrost_condos
                 SqlCommand cmd = new SqlCommand();
                 SqlDataReader dr;
 
-                cmd.CommandText = "select * from pedidosRapidos";
+                cmd.CommandText = "select * from PEDIDOS_RAPIDOS";
 
                 try
                 {
@@ -183,7 +192,15 @@ namespace Bifrost_condos
                         {
                             if (dr.GetFieldType(a).ToString() == "System.Int32")
                             {
-                                linhaDados[a] = dr.GetInt32(a).ToString();
+                              
+                               linhaDados[a] = dr.GetInt32(a).ToString();
+                               if(a == 5)
+                                {
+                                    login login = new login();
+                                    login.selectBlocos(dr.GetInt32(a));
+                                    linhaDados[a]  = login.tem16;
+                                }
+                                
                             }
                             if (dr.GetFieldType(a).ToString() == "System.String")
                             {

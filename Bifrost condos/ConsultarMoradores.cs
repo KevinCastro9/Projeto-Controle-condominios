@@ -81,35 +81,42 @@ namespace Bifrost_condos
             
             if (CmbPesquisa.Text == "NOME")
             {
-                string Morador = "%" + txtNome.Text + "%";
-                cmd.CommandText = "select * from Moradores where Nome Like @Morador";
-                cmd.Parameters.AddWithValue("@Morador", Morador);
+                
+                    string Morador = txtNome.Text;
+                    cmd.CommandText = "select * from MORADORES where NOME = @Morador";
+                    cmd.Parameters.AddWithValue("@Morador", Morador);
+                
+               
             }
             if (CmbPesquisa.Text == "CPF")
             {
                 string CPF = txtNome.Text;
-                cmd.CommandText = "select * from Moradores where  CPF = @CPF";
+                cmd.CommandText = "select * from MORADORES where  CPF = @CPF";
                 cmd.Parameters.AddWithValue("@CPF", CPF);
             }
             if (CmbPesquisa.Text == "RG")
             {
                 string RG = txtNome.Text;
-                cmd.CommandText = "select * from Moradores where  RG = @RG";
+                cmd.CommandText = "select * from MORADORES where  RG = @RG";
                 cmd.Parameters.AddWithValue("@RG", RG);
             }
             if (CmbPesquisa.Text == "GARAGEM")
             {
                 string Garagem = txtNome.Text;
-                cmd.CommandText = "select * from Moradores where  Garagem = @Garagem";
+                cmd.CommandText = "select * from MORADORES where  GARAGEM = @Garagem";
                 cmd.Parameters.AddWithValue("@Garagem", Garagem);
             }
             if (CmbPesquisa.Text == "APARTAMENTO")
             {
                 string Apartamento = cmbApt.Text;
                 string Blocos = cmbBlocos.Text;
-                cmd.CommandText = "select * from Moradores where  Bloco = @Blocos and Apartamento = @Apartamento";
+                login login = new login();
+                login.selectcodbloco(Blocos);
+                int codBloco = login.tem19;
+               
+                cmd.CommandText = "select * from MORADORES where  COD_BLOCO = @Blocos and APARTAMENTO = @Apartamento";
                 cmd.Parameters.AddWithValue("@Apartamento", Apartamento);
-                cmd.Parameters.AddWithValue("@Blocos", Blocos);
+                cmd.Parameters.AddWithValue("@Blocos", codBloco);
             }
 
             try
@@ -147,7 +154,7 @@ namespace Bifrost_condos
 
                     dataGridView2.Rows.Add(linhaDados);
                 }
-                if (linhaDados[0] == null)
+                if (linhaDados[0] == null && linhaDados[1] == null)
                 {
                     MessageBox.Show("A Consulta não foi localizada, tente novamente!!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     dataGridView2.Rows.Clear();

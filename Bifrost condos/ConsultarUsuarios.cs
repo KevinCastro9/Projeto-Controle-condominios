@@ -28,25 +28,60 @@ namespace Bifrost_condos
             label2.Visible = false;
 
             login login = new login();
+            //string salvarCargos = "";
+            //int i = 1;
+            //login.envio = "teste";
+
+
+            //while (login.envio != "")
+            //{
+            //    login.envio = "";
+            //    login.selectCargos();
+            //    salvarCargos += "|" + login.envio;
+            //    i++;
+            //}
+            //string[] cargos = salvarCargos.Split((char)'|');
+            //int testee = cargos.Count();
+            //for (int x = 0; x <= testee - 1; x++)
+            //{
+            //    if (cargos[x] != "")
+            //    {
+            //        cmbCargo.Items.Add(cargos[x]);
+            //    }
+
+            //}
+       
+
             string salvarCargos = "";
+            string salvarDepartamentos = "";
+
             int i = 1;
-            login.envio = "teste";
+            int l = 1;
+            //login.envio = "teste";
+            login.envio2 = "teste";
 
+            //while (login.envio != "")
+            //{
+            //    login.envio = "";            
+            //    login.selectCargos(i);
+            //    salvarCargos += "|" + login.envio;               
+            //    i++;
+            //}
+            login.selectCargos();
+            int con = login.tem31.Count();
+            //string[] cargos = {con};
+            //for (int a = 0; a <= con; a++)
+            //{
 
-            while (login.envio != "")
-            {
-                login.envio = "";
-                login.selectCargos();
-                salvarCargos += "|" + login.envio;
-                i++;
-            }
-            string[] cargos = salvarCargos.Split((char)'|');
-            int testee = cargos.Count();
+            //    cargos[a] = login.tem31[a];
+            //}
+
+            int testee = login.tem31.Count();
             for (int x = 0; x <= testee - 1; x++)
             {
-                if (cargos[x] != "")
+                if (login.tem31[x] != "" && login.tem31[x] != null)
                 {
-                    cmbCargo.Items.Add(cargos[x]);
+                    cmbCargo.Items.Add(login.tem31[x]);
                 }
 
             }
@@ -76,25 +111,28 @@ namespace Bifrost_condos
             if (CmbPesquisa.Text == "NOME")
             {
                 string NOME = "%" + txtNome.Text + "%";
-                cmd.CommandText = "select * from UsuarioDesck where Nome like @NOME";
+                cmd.CommandText = "select * from USUARIOS_DESCK where NOME like @NOME";
                 cmd.Parameters.AddWithValue("@NOME", NOME);
             }
             if (CmbPesquisa.Text == "*")
             {
                 
-                cmd.CommandText = "select * from UsuarioDesck";
+                cmd.CommandText = "select * from USUARIOS_DESCK";
                
             }
             if (CmbPesquisa.Text == "CARGO")
             {
                 string CARGO =  cmbCargo.Text ;
-                cmd.CommandText = "select * from UsuarioDesck where Cargo = @CARGO";
-                cmd.Parameters.AddWithValue("@CARGO", CARGO);
+                login login = new login();
+                login.codCargoFunc(CARGO);
+                int codcargo = login.tem33;
+                cmd.CommandText = "select * from USUARIOS_DESCK where COD_CARGO = @CARGO";
+                cmd.Parameters.AddWithValue("@CARGO", codcargo);
             }
             if (CmbPesquisa.Text == "LOGIN")
             {
                 string LOGIN = txtNome.Text;
-                cmd.CommandText = "select * from UsuarioDesck where Login = @LOGIN";
+                cmd.CommandText = "select * from USUARIOS_DESCK where LOGIN = @LOGIN";
                 cmd.Parameters.AddWithValue("@LOGIN", LOGIN);
             }
 

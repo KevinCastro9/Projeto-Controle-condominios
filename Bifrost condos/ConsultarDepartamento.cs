@@ -37,7 +37,7 @@ namespace Bifrost_condos
             {
                 //Conectar ao Banco
                 cmd.Connection = conexão.conectar();
-                cmd.CommandText = "select * from Departamento";
+                cmd.CommandText = "select * from DEPARTAMENTOS";
                 //Executar Comando
                 dr = cmd.ExecuteReader();
 
@@ -65,7 +65,7 @@ namespace Bifrost_condos
                         }
                         
                     }
-                    CmbDepartamento.Items.Add(linhaDados[0]);
+                    CmbDepartamento.Items.Add(linhaDados[1]);
 
                 }
 
@@ -126,13 +126,16 @@ namespace Bifrost_condos
 
                 if (Departamento == "*")
                 {
-                    cmd.CommandText = "select * from CargosDepartamento";
+                    cmd.CommandText = "select * from DEPARTAMENTOS";
                     tt = "teste";
                 }
                 else
                 {
-                    cmd.CommandText = "select * from CargosDepartamento where Departamento = @Departamento";
-                    cmd.Parameters.AddWithValue("@Departamento", Departamento);
+                    login login = new login();
+                    login.selectCodDepar(Departamento);
+                    int codDepartamento = login.tem47;
+                    cmd.CommandText = "select * from CARGOS where COD_DEPARTAMENTO = @Departamento";
+                    cmd.Parameters.AddWithValue("@Departamento", codDepartamento);
                     tt = "";
                 }
 

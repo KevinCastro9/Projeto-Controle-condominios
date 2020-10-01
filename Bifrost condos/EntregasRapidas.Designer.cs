@@ -59,7 +59,7 @@
             this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecalho.Location = new System.Drawing.Point(0, 0);
             this.panelCabecalho.Name = "panelCabecalho";
-            this.panelCabecalho.Size = new System.Drawing.Size(792, 71);
+            this.panelCabecalho.Size = new System.Drawing.Size(697, 71);
             this.panelCabecalho.TabIndex = 8;
             // 
             // pictureBox1
@@ -93,7 +93,7 @@
             this.bntMaxmizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntMaxmizar.ForeColor = System.Drawing.Color.White;
             this.bntMaxmizar.Image = ((System.Drawing.Image)(resources.GetObject("bntMaxmizar.Image")));
-            this.bntMaxmizar.Location = new System.Drawing.Point(705, 3);
+            this.bntMaxmizar.Location = new System.Drawing.Point(610, 3);
             this.bntMaxmizar.Name = "bntMaxmizar";
             this.bntMaxmizar.Size = new System.Drawing.Size(40, 47);
             this.bntMaxmizar.TabIndex = 3;
@@ -110,7 +110,7 @@
             this.bntFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntFechar.ForeColor = System.Drawing.Color.White;
             this.bntFechar.Image = ((System.Drawing.Image)(resources.GetObject("bntFechar.Image")));
-            this.bntFechar.Location = new System.Drawing.Point(749, 3);
+            this.bntFechar.Location = new System.Drawing.Point(654, 3);
             this.bntFechar.Name = "bntFechar";
             this.bntFechar.Size = new System.Drawing.Size(40, 47);
             this.bntFechar.TabIndex = 1;
@@ -123,16 +123,16 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(12, 88);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(574, 311);
+            this.dataGridView2.Size = new System.Drawing.Size(663, 339);
             this.dataGridView2.TabIndex = 81;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Bifrost_condos.Properties.Resources.LOGO;
-            this.pictureBox3.Location = new System.Drawing.Point(607, 88);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 433);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(163, 83);
+            this.pictureBox3.Size = new System.Drawing.Size(146, 83);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 82;
             this.pictureBox3.TabStop = false;
@@ -140,7 +140,7 @@
             // cmbApt
             // 
             this.cmbApt.FormattingEnabled = true;
-            this.cmbApt.Location = new System.Drawing.Point(688, 231);
+            this.cmbApt.Location = new System.Drawing.Point(260, 454);
             this.cmbApt.Name = "cmbApt";
             this.cmbApt.Size = new System.Drawing.Size(63, 21);
             this.cmbApt.TabIndex = 107;
@@ -148,7 +148,7 @@
             // cmbBlocos
             // 
             this.cmbBlocos.FormattingEnabled = true;
-            this.cmbBlocos.Location = new System.Drawing.Point(595, 231);
+            this.cmbBlocos.Location = new System.Drawing.Point(167, 454);
             this.cmbBlocos.Name = "cmbBlocos";
             this.cmbBlocos.Size = new System.Drawing.Size(87, 21);
             this.cmbBlocos.TabIndex = 106;
@@ -160,15 +160,15 @@
             this.lblDepartamento.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartamento.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblDepartamento.ForeColor = System.Drawing.Color.White;
-            this.lblDepartamento.Location = new System.Drawing.Point(592, 189);
+            this.lblDepartamento.Location = new System.Drawing.Point(164, 433);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(132, 18);
+            this.lblDepartamento.Size = new System.Drawing.Size(124, 18);
             this.lblDepartamento.TabIndex = 108;
-            this.lblDepartamento.Text = "APARTAMENTO : ";
+            this.lblDepartamento.Text = "APARTAMENTO ";
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(592, 258);
+            this.btnPesquisar.Location = new System.Drawing.Point(167, 481);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisar.TabIndex = 109;
@@ -178,7 +178,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(673, 258);
+            this.button1.Location = new System.Drawing.Point(248, 481);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 110;
@@ -197,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Bifrost_condos.Properties.Resources.fundo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(792, 411);
+            this.ClientSize = new System.Drawing.Size(697, 518);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.lblDepartamento);

@@ -1045,7 +1045,7 @@ namespace Bifrost_condos
         public void consultarDepartamentos(string @Departamento)
         {
             //Comando sql
-            cmd.CommandText = "select * from CargosDepartamento where Departamento = @Departamento";
+            cmd.CommandText = "select * from CARGOS where DEPARTAMENTOS = @Departamento";
             cmd.Parameters.AddWithValue("@Departamento", Departamento);
 
             try
@@ -1465,7 +1465,7 @@ namespace Bifrost_condos
         public bool cadastrarVisitante(string NomeVisitante, string CPF, string RG, string Sexo, string DataNasc, string Telefone, int BlocoVisita, string AptVisita)
         {
             //Comando sql
-            cmd.CommandText = "insert into VISITANTES(CPF, RG, SEXO, DATA_NASCIMENTO, TELEFONE, APARTAMENTO, COD_BLOCO, ATIVO) values (@CPF, @RG, @Sexo, @DataNasc, @Telefone, @AptVisita, @BlocoVisita, 'S')";
+            cmd.CommandText = "insert into VISITANTES(CPF, RG, SEXO, DATA_NASCIMENTO, TELEFONE, APARTAMENTO, COD_BLOCO, ATIVO, NOME_VISITANTE) values (@CPF, @RG, @Sexo, @DataNasc, @Telefone, @AptVisita, @BlocoVisita, 'S', @NomeVisitante)";
             //parametros
             cmd.Parameters.AddWithValue("@NomeVisitante", NomeVisitante);
             cmd.Parameters.AddWithValue("@CPF", CPF);
